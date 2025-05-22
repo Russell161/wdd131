@@ -1,8 +1,27 @@
-// Load saved words from localStorage or use default
-let words = JSON.parse(localStorage.getItem("words")) || ["Hello", "World", "JavaScript", "Fun"];
+let words = [];
 let currentIndex = 0;
-
 const wordDisplay = document.getElementById("wordDisplay");
+const input = document.getElementById("newWordInput");
+
+function loadWords() {
+  const saved = localStorage.getItem("words");
+  if (saved) {
+    try {
+      words = JSON.parse(saved);
+    } catch (e) {
+      console.error("Error parsing saved words:", e);
+      words = [];
+    }
+  }
+
+  if (!Array.isArray(words) || words.length === 0) {
+    words = ["Hello", "World", "JavaScript", "Fun"];
+  }
+}
+
+function saveWords() {
+  localStorage.setItem("words", JSON.stringify(words));
+}
 
 function showNextWord() {
   wordDisplay.textContent = words[currentIndex];
@@ -10,16 +29,24 @@ function showNextWord() {
 }
 
 function addWord() {
-  const input = document.getElementById("newWordInput");
   const newWord = input.value.trim();
   if (newWord !== "") {
     words.push(newWord);
-    localStorage.setItem("words", JSON.stringify(words));
+    saveWords();
     input.value = "";
     alert(`Added "${newWord}" to the list!`);
   }
 }
 
-// Cycle through words every 2 seconds
+
+function resetWords() {
+  localStorage.removeItem("words");
+  words = ["Hello", "World", "JavaScript", "Fun"];
+  currentIndex = 0;
+  alert("Word list has been reset.");
+}
+
+
+loadWords();
 setInterval(showNextWord, 2000);
-showNextWord(); // Show first word immediately
+showNextWord();
