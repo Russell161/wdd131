@@ -1,0 +1,113 @@
+body {
+  font-family: sans-serif;
+  background: #f0f0f0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  max-width: 900px;
+  width: 100%;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.card {
+  border-radius: 15px;
+  padding: 1.5rem;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: grid;
+  gap: 1rem;
+  width: 400px;
+  transition: transform 0.3s ease;
+}
+
+/* Overlapping and staggered effect */
+.card:first-child {
+  z-index: 2;
+  position: relative;
+  transform: translateX(30px);
+}
+
+.card:last-child {
+  z-index: 1;
+  position: relative;
+  transform: translateX(-30px) translateY(20px);
+}
+
+.card-image {
+  justify-self: end;
+  height: 55px;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.expiration {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.black-strip {
+  height: 40px;
+  background: #333;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  background: #0099cc;
+  color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0077aa;
+}
+
+.errorMsg {
+  color: red;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* RESPONSIVE: remove overlap on small screens */
+@media (max-width: 850px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card:first-child,
+  .card:last-child {
+    transform: none;
+  }
+}

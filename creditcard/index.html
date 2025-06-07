@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <div class="container">
+        <form id="credit-card">
+  <div class="card-container">
+    <div class="card card-front">
+      <img
+        class="card-image"
+        src="data:image/svg+xml;base64,...[your image base64 string here]..."
+        height="55px"
+        alt="Card Icon"
+      />
+      <label>
+        Card Number
+        <input type="text" name="cardNumber" placeholder="1234 5678 9012 3456" required maxlength="16">
+      </label>
+      <label>
+        Name on Card
+        <input type="text" name="cardName" placeholder="John Doe" required>
+      </label>
+      <div class="expiration">
+        <label>
+          Exp. Month
+          <input type="text" name="expMonth" placeholder="MM" required maxlength="2">
+        </label>
+        <label>
+          Exp. Year
+          <input type="text" name="expYear" placeholder="YY" required maxlength="2">
+        </label>
+      </div>
+    </div>
+
+    <div class="card card-back">
+      <div class="black-strip"></div>
+      <label>
+        CVV
+        <input type="text" name="cvv" placeholder="123" required maxlength="3">
+      </label>
+    </div>
+  </div>
+  <button type="submit">Submit</button>
+  <p class="errorMsg"></p>
+</form>
+
+    </div>
+
+    <script src="card.js"></script>
+</body>
+</html>
