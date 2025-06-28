@@ -1,0 +1,160 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #1B98E0;
+  --secondary-color: #59c3c3;
+  --text-dark: #333;
+  --text-light: #ebebeb;
+  --primary-font: Arial, Helvetica, sans-serif;
+  --secondary-font: "Amatic SC";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--primary-font);
+  color: var(--text-dark);
+  padding: 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+header img.logo {
+  width: 60px;
+  display: block;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-family: var(--secondary-font), cursive;
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  font-size: 1rem;
+}
+
+.search-form button {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+}
+
+.search-form button img {
+  width: 20px;
+  height: 20px;
+}
+
+.recipe-card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.recipe-card .tags {
+  margin-bottom: 0.5rem;
+}
+
+.recipe-card .tag {
+  display: inline-block;
+  border: 1px solid var(--text-dark);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.recipe-card h2 {
+  font-family: var(--secondary-font), cursive;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.rating {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.description {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+footer p {
+  font-size: 0.6em;
+  margin-bottom: 1rem;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social img {
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width: 600px) {
+  .recipe-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .recipe-card img {
+    width: 50%;
+    margin-bottom: 0;
+  }
+
+  .recipe-card .tags {
+    margin-top: 0;
+  }
+
+  .description {
+    display: block;
+  }
+}
+
+@media (min-width: 960px) {
+  body {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
