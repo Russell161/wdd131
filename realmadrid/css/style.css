@@ -195,8 +195,8 @@ footer a {
 .modal-content {
   max-width: 90vw;
   max-height: 80vh;
-  width: 900px;
-  height: 1100px;
+  width: auto;
+  height: auto;
   display: block;
   margin: auto;
   border-radius: 10px;
@@ -219,7 +219,7 @@ footer a {
 }
 
 #fedeImg {
-  width: 350px;
+  width: 200px;
 }
 
 @media (max-width: 600px) {
